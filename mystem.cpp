@@ -36,13 +36,6 @@ inline zval* SymbolsToZval(const TSymbol* symbols, int len)
     return res;
 }
 
-inline zval* LongToZval(int num)
-{
-    zval *res = (zval *)safe_emalloc(1, sizeof(zval), 0);
-    ZVAL_LONG(res, num);
-    return res;
-}
-
 const char* GramName(zend_long gram)
 {
     /**
