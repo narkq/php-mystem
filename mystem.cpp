@@ -14,6 +14,7 @@
 
 #define MYSTEM_NS "Mystem"
 #define MYSTEM_GRAMINFO_NS "Mystem\\GramInfo"
+#define MYSTEM_QUAL_CONST(NAME, VALUE) REGISTER_NS_LONG_CONSTANT("Mystem\\QualityFlags", NAME, VALUE, CONST_CS | CONST_PERSISTENT);
 
 inline TSymbol* UnicodeToSymbols(const UnicodeString & str)
 {
@@ -496,6 +497,19 @@ PHP_MINIT_FUNCTION(mystem)
     REGISTER_NS_LONG_CONSTANT(MYSTEM_GRAMINFO_NS, "Predic",           250, CONST_CS | CONST_PERSISTENT);
     REGISTER_NS_LONG_CONSTANT(MYSTEM_GRAMINFO_NS, "Obligatory",       251, CONST_CS | CONST_PERSISTENT);
     REGISTER_NS_LONG_CONSTANT(MYSTEM_GRAMINFO_NS, "Max",              252, CONST_CS | CONST_PERSISTENT);
+
+    MYSTEM_QUAL_CONST("Dictionary",  0);
+    MYSTEM_QUAL_CONST("Bastard",     1);
+    MYSTEM_QUAL_CONST("Sob",         2);
+    MYSTEM_QUAL_CONST("Prefixoid",   4);
+    MYSTEM_QUAL_CONST("Foundling",   8);
+    MYSTEM_QUAL_CONST("BadRequest",  16);
+    MYSTEM_QUAL_CONST("FromEnglish", 65536);
+    MYSTEM_QUAL_CONST("ToEnglish",   131072);
+    MYSTEM_QUAL_CONST("Untranslit",  262144);
+    MYSTEM_QUAL_CONST("Overrode",    1048576);
+    MYSTEM_QUAL_CONST("Fix",         16777216);
+
     return SUCCESS;
 }
 /* }}} */
